@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		
+		<title><%= title %></title>
+		
+		<!-- Stylesheets Libraries -->
+		<link rel="stylesheet" href="css/animate.css" type="text/css" />
+		
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="stylesheets/main.css" type="text/css" />
+		
+		<!-- Libraries JavaScript -->
+		<script src="js/jquery-2.2.0.min.js"></script>
+		<script src="js/jquery.lettering.js"></script>
+		<script src="js/jquery.textillate.js"></script>
+		<script src="lib/three.min.js"></script>
+		<!--<script src="lib/OBJLoader.js"></script>-->
+		<!--<script src="lib/CSS3DRenderer.js"></script>-->
+		<!--<script src="lib/Projector.js"></script>-->
+		<!--<script src="lib/CanvasRenderer.js"></script>-->
+		<!--<script src="/lib/THREEx.WindowResize.js"></script>-->
+		<script src="lib/OrbitControls.js"></script>
+		<script src="lib/DecalGeometry.js"></script>
+		<script src="lib/THREEx.FullScreen.js"></script>
+		<!--<script src="/lib/statics.min.js"></script>-->
+		<!--<script src="/lib/dat.gui.min.js"></script>-->
+		<!--<script src="/lib/DirectionalLightHelper.js"></script>-->
+		<!--<script src="/lib/SpotLightHelper.js"></script>-->
+		<!--<script src="/lib/threex.keyboardstate.js"></script>-->
+		<!--<script src="/lib/threex.keyboardstate.js"></script>-->
+	</head>
+	<body>
+		<!-- Container Tooth -->
+		<div id="box_teeth">
+			<!-- Container Panels faces teeth -->
+			<div class="panel_faces">
+				<div class="face occlusal" name="Oclusal"></div>
+				<div class="face buccal" name="Bucal"></div>
+				<div class="face lingual" name="Lingual"></div>
+				<div class="face mesial" name="Mesial"></div>
+				<div class="face distal" name="Distal"></div>
+			</div>
+			<!-- Tools Box -->
+			<div class="tools_box">
+				<div class="tool add" title="Agregar">
+					<img src="https://www.awicons.com/free-icons/download/toolbar-icons/vista-stock-icons-by-lokas-software/png/256/add.png" />
+					<div class="submenu">
+						<ul>
+							<li class="title_menu">Añadir</li>
+							<li>Bracket</li>
+							<li id="add_plane">Plano</li>
+							<li id="add_axis">Ejes</li>
+							<li id="add_ambient_scene">Ambiente</li>
+						</ul>
+					</div>
+				</div>
+				<div class="tool helpers" title="Agregar">
+					<img src="https://cdn4.iconfinder.com/data/icons/Life_Saver_iContainer/512/lifesaver2.png" />
+					<div class="submenu">
+						<ul>
+							<li class="title_menu">Helpers</li>
+							<li id="add_point_light">Punto de Luz</li>
+							<li id="add_point_light_side">Punto de Luz(lado)</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- Message render -->
+			<div class="render_message">
+				<h1>Renderizando...</h1>
+			</div>
+		</div>
+		
+		<!-- Loader -->
+		<div class="loader"></div>
+		
+		<!-- Script -->
+		<script src="js/app.js"></script>
+	</body>
+</html>
