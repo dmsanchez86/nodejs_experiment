@@ -318,23 +318,25 @@ var App = {
     // 		App.scene.add( mesh ); // añado el diente a la escena
     //     });
         
-    //     var bracket = new THREE.JSONLoader();
+        var bracket = new THREE.JSONLoader();
         
-    //     bracket.load('objects/bracket.json', function(object){
-    //         var material = new THREE.MeshLambertMaterial( {
-    // 			color: 0xff0000,
-    // 		} );
+        bracket.load('objects/bracket.js', function(object){
+            var material = new THREE.MeshLambertMaterial( {
+    			color: 0x555555,
+    		} );
     		
-    // 		var mesh = new THREE.Mesh( object, material );
-    // 		mesh.scale.set( 12, 12,12 );
-    // 		mesh.rotateY(10);
-    // 		mesh.position.set(-70,190,0);
+    		var mesh = new THREE.Mesh( object, material );
+    		mesh.scale.set( 22, 22,22 );
+    		mesh.position.set(-71,190,0);
+    		mesh.rotation.x = 3.14;
+    		mesh.rotation.y = -7.9;
+    		mesh.rotation.z = 0;
+    		mesh.visible = false;
     		
-    // 		App.objects.bracket = mesh;
-    // 		App.objects.bracket.rotation.y = 0;
+    		App.objects.bracket = mesh;
     		
-    // 		App.scene.add( mesh );
-    //     });
+    		App.scene.add( mesh );
+        });
     },
     
     // funcion que me crea los ejes de apoyo (x,y,z)
@@ -873,6 +875,12 @@ function load_page(){
         App.controls.reset();
         event_face($(this));
         App.events.faceDistal('only_position');
+    });
+    
+    // click para añadir el bracket
+    $('#add_bracket').unbind('click').click(function(){
+        App.objects.bracket.visible = !App.objects.bracket.visible;
+        $(this).toggleClass('checked');
     });
     
     // click para añadir el plano
