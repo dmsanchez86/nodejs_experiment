@@ -8,10 +8,10 @@ var express = require('express');
 var fs = require('fs');
 var app = express();
 
-// mongoose.connect('mongodb://localhost/seriestv', function(err, res){
-//   if(err) console.log('Error ' + err);
-//   else console.log('Conectado ');
-// });
+mongoose.connect('mongodb://localhost/seriestv', function(err, res){
+  if(err) console.log('Error ' + err);
+  else console.log('Conectado ');
+});
 
 app.use(express.static(path.resolve(__dirname, 'client')));
 app.set('view engine','ejs');

@@ -145,11 +145,12 @@ var App = {
         // parametros de la camara
         var fov = 90;
         var aspect = this.const.WINDOW_WIDTH / this.const.WINDOW_HEIGHT;
-        var near = 0.1;
-        var far = 20000;
+        var near = 1;
+        var far = 1000;
         
         // creacion de la camara con sus parametros
         this.camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+        // this.camera = new THREE.OrthographicCamera( this.const.WINDOW_WIDTH / - 2, this.const.WINDOW_WIDTH / 2, this.const.WINDOW_HEIGHT / 2, this.const.WINDOW_HEIGHT / - 2, 1, 1000 );
         
         // posiciono la camara
         App.camera.position.set(-18.967, 280.920,-1.672);

@@ -129,19 +129,34 @@ module.exports = function(app){
     });
     
     app.post('/add_user', function(req, res){
-        console.log(req.body);
+        //console.log(req.body);
         
         var users = new Users({
             username: req.body.username,
             email: req.body.email,
             password: req.body.password
         });
+            console.log(users);
         
         users.save(function(err){
-            if(!err)
-                res.send('¡Usuario registrado!');
-            else
-                res.send('Error '+ err);
+            console.log("response -------");
+            console.log(err);
+            if(err != "null"){
+                res.send(
+                    {
+                        "message": '¡Usuario registrado!',
+                        "status": true,
+                    }
+                );
+            }else{
+                console.log('Error '+ err);
+                res.send(
+                    {
+                        "message": err,
+                        "status": false,
+                    }
+                );
+            }
         });
     });
     app.get('/seriestv', findAllSeriesTV);

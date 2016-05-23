@@ -14,7 +14,15 @@ $('#form_register').unbind('submit').submit(function(e){
             password: $password
         },
         success: function(res){
-            console.log(res);
+            var $response = (res);
+            
+            if($response.status){
+                $('#name').val("");
+                $('#email').val("");
+                $('#password').val("");
+            }
+            
+            alert($response.message);
         }
     });
 });
